@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>Meus plantões</h1>
+    {% if plantao_list %}
+        <h5>Total de Horas: {{total_horas}} horas</h5>
+        <table class="table">
+          <thead>
+            <th scope="col">#</th>
+            <th scope="col">Data</th>
+            <th scope="col">Turno</th>
+            <th scope="col">Horas</th>
+            <th></th>
+          </thead>
+          {% for plantao in plantao_list %}
+          <tr>
+              <th scope="row">{{ forloop.counter }}</th>
+            <td>{{ plantao.data_plantao }}</td>
+            <td>{{ plantao.get_turno_display }}</td>
+            <td>{{ plantao.horas }}</td>
+            <td>
+                <a href="" class="btn btn-primary-outline"><i class="fa fa-search" aria-hidden="true" style="color:green"></i></a>
+                <a href="" class="btn btn-warning-outline"><i class="fa fa-pencil" aria-hidden="true" style="color:blue"></i></a>
+                <a href="" class="btn btn-danger-outline"><i class="fa fa-trash" aria-hidden="true" style="color:red"></i></a>
+            </td>
+          </tr>
+          {% endfor %}
+        </table>
+      {% else %}
+        <p>Não há plantões cadastrados!</p>
+      {% endif %}
+{% endblock %}
