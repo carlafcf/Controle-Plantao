@@ -126,5 +126,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIR = STATIC_DIR
 
 LOGIN_URL = 'usuario:login'
-LOGIN_REDIRECT_URL = 'usuario:listar'
+LOGIN_REDIRECT_URL = 'plantao:listar'
 LOGOUT_REDIRECT_URL = 'usuario:login'

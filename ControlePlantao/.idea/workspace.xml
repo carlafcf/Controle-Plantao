@@ -2,24 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0872af67-e61e-4ce7-be5e-b001b8592b82" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/Plantao/plantao_confirm_delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Plantao/plantao_update_form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Plantao/resumo_mes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Usuario/user_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControlePlantao/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ControlePlantao/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControlePlantao/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ControlePlantao/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plantao/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/plantao/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plantao/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/plantao/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Plantao/plantao_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Plantao/plantao_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Usuario/cadastrar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Usuario/cadastrar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Usuario/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Usuario/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Usuario/user_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Usuario/user_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuario/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/usuario/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuario/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/usuario/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuario/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/usuario/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuario/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/usuario/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/usuario/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/usuario/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,26 +26,26 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="13" />
-          <entry key="py" value="31" />
+          <entry key="html" value="14" />
+          <entry key="py" value="35" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="13" />
-          <entry key="Python" value="31" />
+          <entry key="HTML" value="14" />
+          <entry key="Python" value="35" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="1373" />
-          <entry key="py" value="2995" />
+          <entry key="html" value="1501" />
+          <entry key="py" value="3169" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="1373" />
-          <entry key="Python" value="2995" />
+          <entry key="HTML" value="1501" />
+          <entry key="Python" value="3169" />
         </counts>
       </usages-collector>
     </session>
@@ -67,26 +55,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plantao/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="34" column="41" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
+            <state relative-caret-position="342">
+              <caret line="84" column="62" lean-forward="true" selection-start-line="84" selection-start-column="62" selection-end-line="84" selection-end-column="62" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
-                <marker date="1586828332374" expanded="true" signature="1627:2488" ph="..." />
+                <marker date="1586871432149" expanded="true" signature="1627:2488" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/Plantao/plantao_confirm_delete.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/Plantao/plantao_update_form.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
@@ -96,10 +75,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/Usuario/cadastrar.html">
+        <entry file="file://$PROJECT_DIR$/ControlePlantao/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="70" lean-forward="true" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="70" />
+            <state relative-caret-position="285">
+              <caret line="128" column="37" selection-start-line="128" selection-start-column="37" selection-end-line="128" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ControlePlantao/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
+              <folding>
+                <element signature="e#639#671#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -116,55 +107,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-29">
-              <caret line="24" column="46" lean-forward="true" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="74" />
+            <state relative-caret-position="35">
+              <caret line="24" column="70" selection-start-line="24" selection-start-column="70" selection-end-line="24" selection-end-column="70" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plantao/urls.py">
+        <entry file="file://$PROJECT_DIR$/templates/Usuario/user_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="75" selection-start-line="10" selection-start-column="75" selection-end-line="10" selection-end-column="75" />
+            <state relative-caret-position="249">
+              <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
               <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/usuario/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plantao/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="4" lean-forward="true" selection-start-line="21" selection-start-column="4" selection-end-line="22" selection-end-column="44" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/Plantao/plantao_list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="39" column="44" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="44" />
-              <folding>
-                <element signature="n#style#0;n#i#0;n#a#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#a#0;n#td#3;n#tr#0;n#table#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#i#0;n#a#1;n#td#3;n#tr#0;n#table#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#i#0;n#a#2;n#td#3;n#tr#0;n#table#0;n#!!top" expanded="true" />
               </folding>
@@ -172,7 +127,52 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/usuario/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+              <folding>
+                <element signature="e#0#53#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/usuario/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plantao/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>plantao:listar</find>
+      <find>plantao:list</find>
+    </findStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -190,18 +190,18 @@
         <option value="$PROJECT_DIR$/ControlePlantao/urls.py" />
         <option value="$PROJECT_DIR$/templates/Usuario/login.html" />
         <option value="$PROJECT_DIR$/templates/Usuario/cadastrar.html" />
-        <option value="$PROJECT_DIR$/ControlePlantao/settings.py" />
         <option value="$PROJECT_DIR$/usuario/urls.py" />
         <option value="$PROJECT_DIR$/templates/Usuario/usuario_list.html" />
-        <option value="$PROJECT_DIR$/usuario/views.py" />
-        <option value="$PROJECT_DIR$/templates/Usuario/user_list.html" />
         <option value="$PROJECT_DIR$/usuario/models.py" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
-        <option value="$PROJECT_DIR$/plantao/urls.py" />
         <option value="$PROJECT_DIR$/templates/Plantao/plantao_list.html" />
         <option value="$PROJECT_DIR$/templates/Plantao/plantao_confirm_delete.html" />
-        <option value="$PROJECT_DIR$/plantao/views.py" />
         <option value="$PROJECT_DIR$/templates/Plantao/plantao_update_form.html" />
+        <option value="$PROJECT_DIR$/ControlePlantao/settings.py" />
+        <option value="$PROJECT_DIR$/plantao/urls.py" />
+        <option value="$PROJECT_DIR$/plantao/views.py" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/templates/Usuario/user_list.html" />
+        <option value="$PROJECT_DIR$/usuario/views.py" />
       </list>
     </option>
   </component>
@@ -362,54 +362,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ControlePlantao/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
-          <folding>
-            <element signature="e#639#671#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/Usuario/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="9" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ControlePlantao/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="128" column="32" selection-start-line="128" selection-start-column="32" selection-end-line="128" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/usuario/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/usuario/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Usuario/user_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -420,13 +376,6 @@
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-29">
-          <caret line="24" column="46" lean-forward="true" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="74" />
         </state>
       </provider>
     </entry>
@@ -444,16 +393,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="70" lean-forward="true" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plantao/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="75" selection-start-line="10" selection-start-column="75" selection-end-line="10" selection-end-column="75" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -476,17 +415,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plantao/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="34" column="41" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <marker date="1586828332374" expanded="true" signature="1627:2488" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/Plantao/plantao_form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -498,6 +426,83 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/usuario/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ControlePlantao/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="128" column="37" selection-start-line="128" selection-start-column="37" selection-end-line="128" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ControlePlantao/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
+          <folding>
+            <element signature="e#639#671#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plantao/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="35">
+          <caret line="24" column="70" selection-start-line="24" selection-start-column="70" selection-end-line="24" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Usuario/user_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+          <folding>
+            <element signature="n#style#0;n#i#0;n#a#0;n#td#3;n#tr#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#a#1;n#td#3;n#tr#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#a#2;n#td#3;n#tr#0;n#table#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plantao/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="84" column="62" lean-forward="true" selection-start-line="84" selection-start-column="62" selection-end-line="84" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <marker date="1586871432149" expanded="true" signature="1627:2488" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/usuario/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

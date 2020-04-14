@@ -4,6 +4,7 @@ from . import views
 app_name = 'plantao'
 
 urlpatterns = [
+    path('<int:list_all>', views.listar, name='listar'),
     path('', views.listar, name='listar'),
     path('novo/', views.CriarPlantao.as_view(), name='criar'),
     path('resumo/mes/<int:month>/<int:year>', views.resumo_mes, name='resumo'),

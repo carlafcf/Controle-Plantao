@@ -50,10 +50,10 @@ class DeletarPlantao(LoginRequiredMixin, generic.DeleteView):
     success_url = reverse_lazy('plantao:listar')
 
 @login_required
-def listar(request):
+def listar(request, list_all=1):
     this_month = date.today().month
     this_year = date.today().year
-    if request.user.is_superuser:
+    if request.user.is_superuser and list_all:
         plantoes = Plantao.objects.filter(data_plantao__month=this_month, data_plantao__year=this_year)
         total_horas = list(Plantao.objects.filter(data_plantao__month=this_month, data_plantao__year=this_year)
                            .aggregate(Sum('horas')).values())[0]
