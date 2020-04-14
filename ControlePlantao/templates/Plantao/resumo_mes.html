@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>Resumo do mês</h1>
+
+    <h5>Total de Horas: {{total_horas}} horas</h5>
+    <table class="table">
+      <thead>
+        <th scope="col">#</th>
+        <th scope="col">Plantonista</th>
+        <th scope="col">Horas</th>
+      </thead>
+      {% for plantonista in lista_final %}
+      <tr>
+          <th scope="row">{{ forloop.counter }}</th>
+        <td>{{ plantonista.0 }}</td>
+        <td>{{ plantonista.1 }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+{% endblock %}

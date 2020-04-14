@@ -2,7 +2,24 @@
 
 {% block content %}
 
-    <h1>Meus plantões</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-8">
+            {% if user.is_superuser %}
+                <h1>Plantões do mês</h1>
+            {% else %}
+                <h1>Meus plantões do mês</h1>
+            {% endif %}
+
+        </div>
+        <div class="text-right col-4">
+            <a href="{% url 'plantao:criar' %}" class="btn btn-primary-outline">
+                <i class="fa fa-plus-circle fa-3x" aria-hidden="true" style="color:green"></i>
+            </a>
+        </div>
+      </div>
+    </div>
+
     {% if plantao_list %}
         <h5>Total de Horas: {{total_horas}} horas</h5>
         <table class="table">
@@ -11,6 +28,9 @@
             <th scope="col">Data</th>
             <th scope="col">Turno</th>
             <th scope="col">Horas</th>
+            {% if user.is_superuser %}
+                <th scope="col">Plantonista</th>
+            {% endif %}
             <th></th>
           </thead>
           {% for plantao in plantao_list %}
@@ -19,10 +39,16 @@
             <td>{{ plantao.data_plantao }}</td>
             <td>{{ plantao.get_turno_display }}</td>
             <td>{{ plantao.horas }}</td>
+            {% if user.is_superuser %}
+                <th scope="col">{{ plantao.plantonista.first_name }} {{ plantao.plantonista.last_name }}</th>
+            {% endif %}
             <td>
-                <a href="" class="btn btn-primary-outline"><i class="fa fa-search" aria-hidden="true" style="color:green"></i></a>
-                <a href="" class="btn btn-warning-outline"><i class="fa fa-pencil" aria-hidden="true" style="color:blue"></i></a>
-                <a href="" class="btn btn-danger-outline"><i class="fa fa-trash" aria-hidden="true" style="color:red"></i></a>
+                <a href="{% url 'plantao:editar' pk=plantao.pk %}" class="btn btn-warning-outline">
+                    <i class="fa fa-pencil" aria-hidden="true" style="color:blue"></i>
+                </a>
+                <a href="{% url 'plantao:deletar' pk=plantao.pk %}" class="btn btn-danger-outline">
+                    <i class="fa fa-trash" aria-hidden="true" style="color:red"></i>
+                </a>
             </td>
           </tr>
           {% endfor %}

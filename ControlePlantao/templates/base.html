@@ -22,7 +22,7 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light mynav" role="navigation" id='navbar'>
       <div class="container">
-        <a class="navbar-brand bigbrand" href="">Início</a>
+        <a class="navbar-brand bigbrand" href="{% url 'plantao:listar' %}">Início</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -36,18 +36,28 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="">Novo Plantão</a>
                   <a class="dropdown-item" href="">Visualizar meus plantões</a>
+                  <a class="dropdown-item" href="{% url 'plantao:resumo' month=0 year=0 %}">Ver resumo do mês</a>
                 </div>
               </li>
               <li class="nav-item"> <a class="nav-link" href="">Outros</a> </li>
+              {% if user.is_superuser %}
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Plantonistas
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="nav-link" href="{% url 'usuario:cadastrar' %}">Cadastrar plantonista</a>
+                    <a class="nav-link" href="">Listar plantonistas</a>
+                  </div>
+                </li>
+
+              {% endif %}
             {% endif %}
           </ul>
           <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
             {% if user.is_authenticated %}
               <li class="nav-item"><a class="nav-link">{{user.first_name}} {{user.last_name}}</a></li>
               <li class="nav-item"><a class="nav-link" href="{% url 'usuario:logout' %}">Sair</a></li>
-            {% else %}
-              <li class="nav-item"><a class="nav-link" href="{% url 'usuario:login' %}">Login</a></li>
-              <li class="nav-item"><a class="nav-link" href="{% url 'usuario:cadastrar' %}">Cadastrar</a></li>
             {% endif %}
           </ul>
         </div>

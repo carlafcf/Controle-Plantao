@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Deletar plantão</h1>
+    <form method="post">
+        {% csrf_token %}
+    <h5>Você tem certeza que deseja deletar o plantão?</h5>
+        <p><b>Plantonista:</b> {{ object.plantonista.first_name }} {{ object.plantonista.last_name }}</p>
+        <p><b>Data:</b> {{ object.data_plantao }}</p>
+        <p><b>Turno:</b> {{ object.get_turno_display }}</p>
+        <p><b>Horas:</b> {{ object.horas }}</p>
+    <button type="submit" class="btn btn-success">Confirmar</button>
+</form>
+{% endblock %}
