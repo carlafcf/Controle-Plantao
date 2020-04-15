@@ -34,7 +34,11 @@
                   Plantões
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="{% url 'plantao:criar' %}">Novo Plantão</a>
+                  {% if user.is_superuser %}
+                    <a class="dropdown-item" href="{% url 'plantao:criar_admin' %}">Novo Plantão</a>
+                  {% else %}
+                    <a class="dropdown-item" href="{% url 'plantao:criar' %}">Novo Plantão</a>
+                  {% endif %}
                   <a class="dropdown-item" href="{% url 'plantao:listar' list_all=0 %}">Visualizar meus plantões</a>
                   {% if user.is_superuser %}
                     <a class="dropdown-item" href="{% url 'plantao:listar' list_all=1 %}">Visualizar todos os plantões</a>

@@ -7,6 +7,7 @@ urlpatterns = [
     path('<int:list_all>', views.listar, name='listar'),
     path('', views.listar, name='listar'),
     path('novo/', views.CriarPlantao.as_view(), name='criar'),
+    path('novo_admin/', views.CriarPlantaoAdmin.as_view(), name='criar_admin'),
     path('resumo/mes/<int:month>/<int:year>', views.resumo_mes, name='resumo'),
     path('editar/<int:pk>/', views.EditarPlantao.as_view(), name='editar'),
     path('deletar/<int:pk>/', views.DeletarPlantao.as_view(), name='deletar'),

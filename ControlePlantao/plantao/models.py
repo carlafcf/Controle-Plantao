@@ -1,8 +1,6 @@
 from django.db import models
 from datetime import date
-from django.contrib.auth import get_user_model
-
-User=get_user_model()
+from usuario.models import User
 
 class Plantao(models.Model):
     TURNOS = [

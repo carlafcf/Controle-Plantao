@@ -13,9 +13,15 @@
 
         </div>
         <div class="text-right col-4">
-            <a href="{% url 'plantao:criar' %}" class="btn btn-primary-outline">
-                <i class="fa fa-plus-circle fa-3x" aria-hidden="true" style="color:green"></i>
-            </a>
+            {% if user.is_superuser %}
+                <a href="{% url 'plantao:criar_admin' %}" class="btn btn-primary-outline">
+                    <i class="fa fa-plus-circle fa-3x" aria-hidden="true" style="color:green"></i>
+                </a>
+              {% else %}
+                <a href="{% url 'plantao:criar' %}" class="btn btn-primary-outline">
+                    <i class="fa fa-plus-circle fa-3x" aria-hidden="true" style="color:green"></i>
+                </a>
+              {% endif %}
         </div>
       </div>
     </div>

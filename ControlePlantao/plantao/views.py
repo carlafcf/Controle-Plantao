@@ -15,8 +15,9 @@ class CriarPlantao(LoginRequiredMixin, generic.CreateView):
     model = Plantao
 
     def form_valid(self, form):
-        form.instance.plantonista = self.request.user
-        if Plantao.objects.filter(plantonista = self.request.user, data_plantao = form.cleaned_data['data_plantao'], turno = form.cleaned_data['turno']).exists():
+        user = User.objects.get(pk=self.request.user.pk)
+        form.instance.plantonista = user
+        if Plantao.objects.filter(plantonista = user, data_plantao = form.cleaned_data['data_plantao'], turno = form.cleaned_data['turno']).exists():
             messages.add_message(self.request, messages.WARNING, "Um plantão nesta mesma data e turno já foi cadastrado por você")
             return self.render_to_response(self.get_context_data(form=form))
         elif ((form.cleaned_data['turno'] == '1' or form.cleaned_data['turno'] == '2') and form.cleaned_data['horas'] > 6) or (form.cleaned_data['turno'] == '3' and form.cleaned_data['horas'] > 12):
@@ -25,6 +26,24 @@ class CriarPlantao(LoginRequiredMixin, generic.CreateView):
             return self.render_to_response(self.get_context_data(form=form))
         else:
             return super(CriarPlantao, self).form_valid(form)
+
+    def get_success_url(self, *args, **kwargs):
+        return reverse("plantao:listar")
+
+class CriarPlantaoAdmin(LoginRequiredMixin, generic.CreateView):
+    fields = ('plantonista', "data_plantao", "turno", 'horas')
+    model = Plantao
+
+    def form_valid(self, form):
+        if Plantao.objects.filter(plantonista = form.cleaned_data['plantonista'], data_plantao = form.cleaned_data['data_plantao'], turno = form.cleaned_data['turno']).exists():
+            messages.add_message(self.request, messages.WARNING, "Um plantão nesta mesma data e turno já foi cadastrado para este plantonista.")
+            return self.render_to_response(self.get_context_data(form=form))
+        elif ((form.cleaned_data['turno'] == '1' or form.cleaned_data['turno'] == '2') and form.cleaned_data['horas'] > 6) or (form.cleaned_data['turno'] == '3' and form.cleaned_data['horas'] > 12):
+            messages.add_message(self.request, messages.WARNING,
+                                 "Quantidade de horas cadastradas inválida.")
+            return self.render_to_response(self.get_context_data(form=form))
+        else:
+            return super(CriarPlantaoAdmin, self).form_valid(form)
 
     def get_success_url(self, *args, **kwargs):
         return reverse("plantao:listar")

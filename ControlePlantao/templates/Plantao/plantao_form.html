@@ -10,9 +10,18 @@
     {% endfor %}
     </ul>
 {% endif %}
-  <form id="plantaoForm" action="{% url 'plantao:criar' %}" method="post">
+{% if user.is_superuser %}
+    <form id="plantaoForm" action="{% url 'plantao:criar_admin' %}" method="post">
     {% csrf_token %}
     {% bootstrap_form form %}
     <input type="submit" class="btn btn-primary btn-large" value="Cadastrar Plantão">
   </form>
+{% else %}
+    <form id="plantaoForm" action="{% url 'plantao:criar' %}" method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <input type="submit" class="btn btn-primary btn-large" value="Cadastrar Plantão">
+  </form>
+{% endif %}
+
 {% endblock %}
