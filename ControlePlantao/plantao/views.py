@@ -13,6 +13,7 @@ from usuario.models import User
 class CriarPlantao(LoginRequiredMixin, generic.CreateView):
     fields = ("data_plantao", "turno", 'horas')
     model = Plantao
+    template_name = 'Plantao/plantao_form.html'
 
     def form_valid(self, form):
         user = User.objects.get(pk=self.request.user.pk)
@@ -33,6 +34,7 @@ class CriarPlantao(LoginRequiredMixin, generic.CreateView):
 class CriarPlantaoAdmin(LoginRequiredMixin, generic.CreateView):
     fields = ('plantonista', "data_plantao", "turno", 'horas')
     model = Plantao
+    template_name = 'Plantao/plantao_form.html'
 
     def form_valid(self, form):
         if Plantao.objects.filter(plantonista = form.cleaned_data['plantonista'], data_plantao = form.cleaned_data['data_plantao'], turno = form.cleaned_data['turno']).exists():
