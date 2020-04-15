@@ -1,1 +1,1 @@
-web: gunicorn ControlePlantao.wsgi
+web: gunicorn ControlePlantao.wsgi --log-file -
