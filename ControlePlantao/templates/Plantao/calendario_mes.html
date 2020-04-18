@@ -5,7 +5,7 @@
 
     <div class="container">
       <!--<div class="row">-->
-        <div class="col-6">
+        <div>
             <h5>Total de Horas: {{total_horas}} horas</h5>
 
             <table class="table">
@@ -32,7 +32,7 @@
               {% endfor %}
             </table>
         </div>
-          <div class="col-6">
+          <div>
               {% if plantao_list %}
                 <h5>Data: {{ plantao_list.0.data_plantao }}</h5>
                 <table class="table">

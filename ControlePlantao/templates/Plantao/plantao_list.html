@@ -42,7 +42,7 @@
           {% for plantao in plantao_list %}
           <tr>
               <th scope="row">{{ forloop.counter }}</th>
-            <td>{{ plantao.data_plantao }}</td>
+            <td>{{ plantao.data_plantao.day }}/{{ plantao.data_plantao.month }}</td>
             <td>{{ plantao.get_turno_display }}</td>
             <td>{{ plantao.horas }}</td>
             {% if user.is_superuser %}

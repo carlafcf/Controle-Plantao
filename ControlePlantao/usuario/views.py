@@ -11,6 +11,7 @@ class SignUp(CreateView):
 
 class ListUsers(ListView):
     model = User
+    template_name = 'Usuario/user_list.html'
 
     def get_queryset(self):
         return self.model.objects.filter(is_active=True)

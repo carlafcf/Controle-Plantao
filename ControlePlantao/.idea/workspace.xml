@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0872af67-e61e-4ce7-be5e-b001b8592b82" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControlePlantao/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ControlePlantao/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Plantao/calendario_mes.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Plantao/calendario_mes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Plantao/plantao_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Plantao/plantao_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuario/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/usuario/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,16 +44,16 @@
           <entry key="Procfile" value="28" />
           <entry key="env" value="4" />
           <entry key="gitignore" value="24" />
-          <entry key="html" value="2984" />
-          <entry key="py" value="5781" />
+          <entry key="html" value="2998" />
+          <entry key="py" value="5792" />
           <entry key="txt" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="2984" />
+          <entry key="HTML" value="2998" />
           <entry key="PLAIN_TEXT" value="65" />
-          <entry key="Python" value="5781" />
+          <entry key="Python" value="5792" />
         </counts>
       </usages-collector>
     </session>
@@ -59,11 +63,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/usuario/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
+            <state relative-caret-position="195">
+              <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
               <folding>
                 <element signature="e#0#65#0" expanded="true" />
-                <marker date="1587132540416" expanded="true" signature="624:630" ph="..." />
+                <marker date="1587228202777" expanded="true" signature="669:675" ph="..." />
               </folding>
             </state>
           </provider>
@@ -125,8 +129,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/Plantao/calendario_mes.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="62" column="19" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
+            <state relative-caret-position="105">
+              <caret line="34" column="14" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
               <folding>
                 <element signature="n#style#0;n#i#0;n#a#0;n#td#3;n#tr#0;n#table#0;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#i#0;n#a#1;n#td#3;n#tr#0;n#table#0;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -138,8 +142,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ControlePlantao/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="173">
+              <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
               <folding>
                 <element signature="e#316#325#0" expanded="true" />
               </folding>
@@ -150,8 +154,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/Plantao/plantao_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="43" column="51" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="51" />
+            <state relative-caret-position="660">
+              <caret line="44" column="76" selection-start-line="44" selection-start-column="76" selection-end-line="44" selection-end-column="76" />
               <folding>
                 <element signature="n#style#0;n#i#0;n#a#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#i#0;n#a#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -198,7 +202,6 @@
         <option value="$PROJECT_DIR$/templates/Usuario/usuario_list.html" />
         <option value="$PROJECT_DIR$/templates/Plantao/plantao_confirm_delete.html" />
         <option value="$PROJECT_DIR$/templates/Plantao/plantao_update_form.html" />
-        <option value="$PROJECT_DIR$/templates/Plantao/plantao_list.html" />
         <option value="$PROJECT_DIR$/plantao/models.py" />
         <option value="$PROJECT_DIR$/templates/Plantao/plantao_form.html" />
         <option value="$PROJECT_DIR$/.env" />
@@ -216,12 +219,13 @@
         <option value="$PROJECT_DIR$/usuario/forms.py" />
         <option value="$PROJECT_DIR$/usuario/urls.py" />
         <option value="$PROJECT_DIR$/templates/Usuario/user_update_form.html" />
-        <option value="$PROJECT_DIR$/usuario/views.py" />
         <option value="$PROJECT_DIR$/templates/Usuario/user_list.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/templates/Plantao/calendario.html" />
         <option value="$PROJECT_DIR$/plantao/views.py" />
+        <option value="$PROJECT_DIR$/templates/Plantao/plantao_list.html" />
         <option value="$PROJECT_DIR$/templates/Plantao/calendario_mes.html" />
+        <option value="$PROJECT_DIR$/usuario/views.py" />
         <option value="$PROJECT_DIR$/ControlePlantao/settings.py" />
       </list>
     </option>
@@ -512,17 +516,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/usuario/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#65#0" expanded="true" />
-            <marker date="1587132540416" expanded="true" signature="624:630" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/usuario/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -585,8 +578,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/Plantao/plantao_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="43" column="51" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="51" />
+        <state relative-caret-position="660">
+          <caret line="44" column="76" selection-start-line="44" selection-start-column="76" selection-end-line="44" selection-end-column="76" />
           <folding>
             <element signature="n#style#0;n#i#0;n#a#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#i#0;n#a#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -597,8 +590,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/Plantao/calendario_mes.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="62" column="19" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
+        <state relative-caret-position="105">
+          <caret line="34" column="14" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
           <folding>
             <element signature="n#style#0;n#i#0;n#a#0;n#td#3;n#tr#0;n#table#0;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#i#0;n#a#1;n#td#3;n#tr#0;n#table#0;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -606,10 +599,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/usuario/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#65#0" expanded="true" />
+            <marker date="1587228202777" expanded="true" signature="669:675" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ControlePlantao/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="173">
+          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
           <folding>
             <element signature="e#316#325#0" expanded="true" />
           </folding>
