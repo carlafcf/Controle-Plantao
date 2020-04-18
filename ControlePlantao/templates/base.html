@@ -24,15 +24,26 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light mynav" role="navigation" id='navbar'>
       <div class="container">
-        <a class="navbar-brand bigbrand" href="{% url 'plantao:listar'%}">Início</a>
+        {% if user.is_superuser %}
+          <a class="navbar-brand bigbrand" href="{% url 'plantao:calendario' month=0 year=0 dia_selecionado=0 %}">Início</a>
+        {% else %}
+          <a class="navbar-brand bigbrand" href="{% url 'plantao:listar'%}">Início</a>
+        {% endif %}
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav navbar-right">
             {% if user.is_authenticated %}
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'usuario:editar' pk=user.id %}">Meus dados</a>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{user.first_name}} {{user.last_name}}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="{% url 'usuario:editar' pk=user.id %}">Meus dados</a>
+                  <a class="dropdown-item" href="{% url 'usuario:logout' %}">Sair</a>
+                </div>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -65,12 +76,6 @@
                 </li>
 
               {% endif %}
-            {% endif %}
-          </ul>
-          <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
-            {% if user.is_authenticated %}
-              <li class="nav-item"><a class="nav-link">{{user.first_name}} {{user.last_name}}</a></li>
-              <li class="nav-item"><a class="nav-link" href="{% url 'usuario:logout' %}">Sair</a></li>
             {% endif %}
           </ul>
         </div>
