@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>Mudar status</h1>
+
+    {% if user_list %}
+        <table class="table">
+          <thead>
+            <th scope="col">#</th>
+            <th scope="col">Plantonista</th>
+            <th scope="col">Coordenador</th>
+            <th scope="col">Ativo</th>
+          </thead>
+          {% for usuario in user_list %}
+          <tr>
+              <th scope="row">{{ forloop.counter }}</th>
+            <td>{{ usuario.first_name }} {{ usuario.last_name }}</td>
+              {% if usuario.is_active %}
+                  {% if usuario.is_superuser %}
+                    <td>
+                        <a href="{% url 'usuario:mudar_coordenacao_status' coord_status=0 usuario=usuario.pk %}" class="btn btn-primary-outline"><i class="fa fa-check" aria-hidden="true" style="color:green"></i></a>
+                    </td>
+                  {% else %}
+                    <td>
+                        <a href="{% url 'usuario:mudar_coordenacao_status' coord_status=1 usuario=usuario.pk %}" class="btn btn-danger-outline"><i class="fa fa-times" aria-hidden="true" style="color:red"></i></a>
+                    </td>
+                  {% endif %}
+              {% else %}
+                <td></td>
+              {% endif %}
+              {% if usuario.is_active %}
+                <td>
+                    <a href="{% url 'usuario:mudar_ativo_status' ativo_status=0 usuario=usuario.pk %}" class="btn btn-primary-outline"><i class="fa fa-check" aria-hidden="true" style="color:green"></i></a>
+                </td>
+              {% else %}
+                <td>
+                    <a href="{% url 'usuario:mudar_ativo_status' ativo_status=1 usuario=usuario.pk %}" class="btn btn-danger-outline"><i class="fa fa-times" aria-hidden="true" style="color:red"></i></a>
+                </td>
+              {% endif %}
+          </tr>
+          {% endfor %}
+        </table>
+      {% else %}
+        <p>Não há plantonistas cadastrados!</p>
+      {% endif %}
+{% endblock %}

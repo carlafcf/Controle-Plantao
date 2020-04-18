@@ -4,8 +4,9 @@ from django.urls import reverse, reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Sum
-from datetime import date
+from datetime import date, datetime
 from django.contrib import messages
+from calendar import monthrange
 
 from plantao.models import Plantao
 from usuario.models import User
@@ -24,6 +25,10 @@ class CriarPlantao(LoginRequiredMixin, generic.CreateView):
         elif ((form.cleaned_data['turno'] == '1' or form.cleaned_data['turno'] == '2') and form.cleaned_data['horas'] > 6) or (form.cleaned_data['turno'] == '3' and form.cleaned_data['horas'] > 12):
             messages.add_message(self.request, messages.WARNING,
                                  "Quantidade de horas cadastradas inválida.")
+            return self.render_to_response(self.get_context_data(form=form))
+        elif (form.cleaned_data['data_plantao'].month != date.today().month):
+            messages.add_message(self.request, messages.WARNING,
+                                 "Não é possível cadastrar plantões para outros meses.")
             return self.render_to_response(self.get_context_data(form=form))
         else:
             return super(CriarPlantao, self).form_valid(form)
@@ -105,3 +110,28 @@ def resumo_mes(request, year, month):
     context = {'lista_final': lista_final, 'total_horas': horas}
     return render(request, 'Plantao/resumo_mes.html', context)
 
+def calendario_mes(request, year, month, dia_selecionado):
+    if year == 0 and month == 0:
+        ano = date.today().year
+        mes = date.today().month
+    else:
+        ano = year
+        mes = month
+    qnt_dias = monthrange(ano, mes)[1]
+    resumo = []
+    total_horas = 0
+    for dia in range(1,qnt_dias+1):
+        data = datetime.strptime(str(ano)+str(mes)+str(dia), '%Y%m%d').date()
+        horas_dia = list(Plantao.objects.filter(data_plantao = data).
+                         aggregate(Sum('horas')).values())[0]
+        total_horas += int(0 if horas_dia is None else horas_dia)
+        resumo.append({'data': data, 'horas': int(0 if horas_dia is None else horas_dia)})
+    print(dia_selecionado)
+    if dia_selecionado == 0:
+        plantao_list = []
+    else:
+        plantao_list = Plantao.objects.filter(data_plantao__day=dia_selecionado, data_plantao__month=mes,
+                                              data_plantao__year=ano)
+    print(plantao_list)
+    context = {'resumo': resumo, 'total_horas': total_horas, 'plantao_list': plantao_list}
+    return render(request, 'Plantao/calendario_mes.html', context)

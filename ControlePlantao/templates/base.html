@@ -3,6 +3,8 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Controle de Plantões</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
@@ -29,20 +31,24 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav navbar-right">
             {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'usuario:editar' pk=user.id %}">Meus dados</a>
+              </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Plantões
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   {% if user.is_superuser %}
-                    <a class="dropdown-item" href="{% url 'plantao:criar_admin' %}">Novo Plantão</a>
+                    <a class="dropdown-item" href="{% url 'plantao:criar_admin' %}">Novo</a>
                   {% else %}
-                    <a class="dropdown-item" href="{% url 'plantao:criar' %}">Novo Plantão</a>
+                    <a class="dropdown-item" href="{% url 'plantao:criar' %}">Novo</a>
                   {% endif %}
-                  <a class="dropdown-item" href="{% url 'plantao:listar' list_all=0 %}">Visualizar meus plantões</a>
+                  <a class="dropdown-item" href="{% url 'plantao:listar' list_all=0 %}">Plantões de {{user.first_name}}</a>
                   {% if user.is_superuser %}
-                    <a class="dropdown-item" href="{% url 'plantao:listar' list_all=1 %}">Visualizar todos os plantões</a>
-                    <a class="dropdown-item" href="{% url 'plantao:resumo' month=0 year=0 %}">Ver resumo do mês</a>
+                    <a class="dropdown-item" href="{% url 'plantao:listar' list_all=1 %}">Ver todos</a>
+                    <a class="dropdown-item" href="{% url 'plantao:calendario' month=0 year=0 dia_selecionado=0 %}">Calendário</a>
+                    <a class="dropdown-item" href="{% url 'plantao:resumo' month=0 year=0 %}">Resumo do mês</a>
                   {% endif %}
                 </div>
               </li>
@@ -52,8 +58,9 @@
                     Plantonistas
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="nav-link" href="{% url 'usuario:cadastrar' %}">Cadastrar plantonista</a>
-                    <a class="nav-link" href="{% url 'usuario:listar' %}">Listar plantonistas</a>
+                    <a class="nav-link" href="{% url 'usuario:cadastrar' %}">Cadastrar</a>
+                    <a class="nav-link" href="{% url 'usuario:listar' %}">Listar</a>
+                    <a class="nav-link" href="{% url 'usuario:status' %}">Mudar status</a>
                   </div>
                 </li>
 

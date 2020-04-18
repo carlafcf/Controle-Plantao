@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Calendário do mês</h1>
+
+    <div class="container">
+      <!--<div class="row">-->
+        <div class="col-6">
+            <h5>Total de Horas: {{total_horas}} horas</h5>
+
+            <table class="table">
+              <thead>
+                <th class="text-center" scope="col" colspan="7">Data</th>
+                <th></th>
+              </thead>
+                <tr>
+              {% for dia in resumo %}
+
+                {% if forloop.counter|divisibleby:7 %}
+                    <td class="text-center"><b>
+                        <a href="{% url 'plantao:calendario' month=0 year=0 dia_selecionado=dia.data.day %}">
+                            {{ dia.data.day }}/{{ dia.data.month }}
+                        </a></b><br>{{ dia.horas }}</td>
+                    </tr><tr>
+                {% else %}
+                    <td class="text-center"><b>
+                        <a href="{% url 'plantao:calendario' month=0 year=0 dia_selecionado=dia.data.day %}">
+                            {{ dia.data.day }}/{{ dia.data.month }}
+                        </a></b><br>{{ dia.horas }}</td>
+                {% endif %}
+
+              {% endfor %}
+            </table>
+        </div>
+          <div class="col-6">
+              {% if plantao_list %}
+                <h5>Data: {{ plantao_list.0.data_plantao }}</h5>
+                <table class="table">
+                  <thead>
+                    <th scope="col">Turno</th>
+                    <th scope="col">Horas</th>
+                    <th scope="col">Plantonista</th>
+                    <th></th>
+                  </thead>
+                  {% for plantao in plantao_list %}
+                  <tr>
+                    <td>{{ plantao.get_turno_display }}</td>
+                    <td>{{ plantao.horas }}</td>
+                    <td>{{ plantao.plantonista }}</td>
+                    <td>
+                        <a href="{% url 'plantao:editar' pk=plantao.pk %}" class="btn btn-warning-outline">
+                            <i class="fa fa-pencil bt1" aria-hidden="true" style="color:blue"></i>
+                        </a>
+                        <a href="{% url 'plantao:deletar' pk=plantao.pk %}" class="btn btn-danger-outline">
+                            <i class="fa fa-trash" aria-hidden="true" style="color:red"></i>
+                        </a>
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </table>
+              {% endif %}
+        </div>
+      <!--</div>-->
+    </div>
+
+{% endblock %}

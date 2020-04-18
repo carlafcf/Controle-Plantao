@@ -6,6 +6,7 @@ app_name = 'plantao'
 urlpatterns = [
     path('<int:list_all>', views.listar, name='listar'),
     path('', views.listar, name='listar'),
+    path('calendario/mes/<int:month>/<int:year>/<int:dia_selecionado>', views.calendario_mes, name='calendario'),
     path('novo/', views.CriarPlantao.as_view(), name='criar'),
     path('novo_admin/', views.CriarPlantaoAdmin.as_view(), name='criar_admin'),
     path('resumo/mes/<int:month>/<int:year>', views.resumo_mes, name='resumo'),
