@@ -41,6 +41,16 @@ class CriarPlantaoAdmin(LoginRequiredMixin, generic.CreateView):
     model = Plantao
     template_name = 'Plantao/plantao_form.html'
 
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class)
+        form.fields['plantonista'].queryset = User.objects.filter(is_active=True)
+        return form
+
+    def get_initial(self):
+        initial_base = super(CriarPlantaoAdmin, self).get_initial()
+        initial_base['plantonista'] = User.objects.filter(username=self.request.user.username)[0]
+        return initial_base
+
     def form_valid(self, form):
         if Plantao.objects.filter(plantonista = form.cleaned_data['plantonista'], data_plantao = form.cleaned_data['data_plantao'], turno = form.cleaned_data['turno']).exists():
             messages.add_message(self.request, messages.WARNING, "Um plantão nesta mesma data e turno já foi cadastrado para este plantonista.")

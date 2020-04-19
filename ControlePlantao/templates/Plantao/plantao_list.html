@@ -6,7 +6,7 @@
       <div class="row">
         <div class="col-8">
             {% if user.is_superuser %}
-                <h1>Plantões do mês</h1>
+                <h1>Plantões de {{plantao_list.0.data_plantao|date:"F"}}</h1>
             {% else %}
                 <h1>Meus plantões do mês</h1>
             {% endif %}
