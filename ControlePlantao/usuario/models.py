@@ -9,4 +9,4 @@ class User(auth.models.User, auth.models.PermissionsMixin):
         return '%s %s' % (self.first_name, self.last_name)
 
     class Meta:
-        ordering = ['-is_active', 'first_name', 'last_name']
+        ordering = ['first_name', 'last_name']

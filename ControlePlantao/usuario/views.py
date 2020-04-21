@@ -1,6 +1,7 @@
 from django.views.generic import CreateView, ListView, UpdateView
 from django.urls import reverse_lazy
 from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404
 from . import forms
 from .models import User
 
@@ -19,6 +20,18 @@ class ListUsers(ListView):
 class UserStatus(ListView):
     model = User
     template_name = 'Usuario/status.html'
+    ordering = ['-is_active']
+
+class EditarUser(UpdateView):
+    model = User
+    form_class = forms.EditarUsuarioForm
+    template_name = 'Usuario/user_update_form.html'
+    def get_object(self, *args, **kwargs):
+        user = get_object_or_404(User, pk=self.kwargs['pk'])
+        return user
+
+    def get_success_url(self, *args, **kwargs):
+        return reverse_lazy('plantao:listar')
 
 #class EditarUsuario(UpdateView):
 #    model = User
@@ -28,18 +41,13 @@ class UserStatus(ListView):
 
 def EditarUsuario(request, pk):
     user = User.objects.get(pk = pk)
-    # form = ProfileForm(user.values().first())
+    print(user.username)
     form = forms.EditarUsuarioForm(request.POST or None, instance=user)
     if request.method == 'POST':
-        #form = forms.EditarUsuarioForm(request.POST, instance=user)
         if form.is_valid():
             form.save(commit=True)
             return redirect('plantao:listar')
-    #form = forms.EditarUsuarioForm(user.values().first())
-    # print(user)
-    context = {
-    'form': form
-    }
+    context = {'form': form}
     return render(request, 'Usuario/user_update_form.html',context)
 
 def mudar_coordenacao_status(request, coord_status, usuario):

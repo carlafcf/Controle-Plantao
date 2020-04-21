@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Sum
 from datetime import date, datetime
+import calendar
 from django.contrib import messages
 from calendar import monthrange
 
@@ -102,6 +103,25 @@ def listar(request, list_all=1):
     return render(request, 'Plantao/plantao_list.html', context)
 
 @login_required
+def meses_anteriores(request):
+    if request.method == "POST":
+        month = datetime.strptime(request.POST.get('mes'), "%Y-%m").date().month
+        year = datetime.strptime(request.POST.get('mes'), "%Y-%m").date().year
+        if request.user.is_superuser:
+            plantoes = Plantao.objects.filter(data_plantao__month=month, data_plantao__year=year)
+            total_horas = list(Plantao.objects.filter(data_plantao__month=month, data_plantao__year=year)
+                               .aggregate(Sum('horas')).values())[0]
+        else:
+            plantoes = Plantao.objects.filter(data_plantao__month=month, data_plantao__year=year,
+                                              plantonista=request.user)
+            total_horas = list(Plantao.objects.filter(data_plantao__month=month, data_plantao__year=year,
+                                                      plantonista=request.user).aggregate(Sum('horas')).values())[0]
+        context = {'plantao_list': plantoes, 'total_horas': total_horas, 'mes': date(int(year), int(month), 1)}
+        return render(request, 'Plantao/meses_anteriores.html', context)
+    else :
+        return render(request, 'Plantao/meses_anteriores.html')
+
+@login_required
 def resumo_mes(request, year, month):
     lista_final = []
     plantonistas = User.objects.all()
@@ -115,8 +135,9 @@ def resumo_mes(request, year, month):
     for plantonista in plantonistas:
         total_horas = list(Plantao.objects.filter(data_plantao__month=this_month, data_plantao__year=this_year,
                                                   plantonista=plantonista).aggregate(Sum('horas')).values())[0]
-        horas += int(0 if total_horas is None else total_horas)
-        lista_final.append([plantonista, int(0 if total_horas is None else total_horas)])
+        if plantonista.is_active or (plantonista.is_active==False and int(0 if total_horas is None else total_horas)>0):
+            horas += int(0 if total_horas is None else total_horas)
+            lista_final.append([plantonista, int(0 if total_horas is None else total_horas)])
     context = {'lista_final': lista_final, 'total_horas': horas}
     return render(request, 'Plantao/resumo_mes.html', context)
 

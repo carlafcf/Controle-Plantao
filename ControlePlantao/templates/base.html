@@ -61,6 +61,7 @@
                     <a class="dropdown-item" href="{% url 'plantao:calendario' month=0 year=0 dia_selecionado=0 %}">Calendário</a>
                     <a class="dropdown-item" href="{% url 'plantao:resumo' month=0 year=0 %}">Resumo do mês</a>
                   {% endif %}
+                    <a class="dropdown-item" href="{% url 'plantao:meses_anteriores' %}">Meses anteriores</a>
                 </div>
               </li>
               {% if user.is_superuser %}
