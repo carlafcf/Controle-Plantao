@@ -84,7 +84,7 @@ class EditarPlantao(LoginRequiredMixin, generic.UpdateView):
 
 class DeletarPlantao(LoginRequiredMixin, generic.DeleteView):
     model = Plantao
-    template_name = 'Plantao/confirm_delete.html'
+    template_name = 'Plantao/plantao_confirm_delete.html'
     success_url = reverse_lazy('plantao:listar')
 
 @login_required
