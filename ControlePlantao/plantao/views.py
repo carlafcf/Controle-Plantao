@@ -69,7 +69,7 @@ class CriarPlantaoAdmin(LoginRequiredMixin, generic.CreateView):
 class EditarPlantao(LoginRequiredMixin, generic.UpdateView):
     model = Plantao
     fields = ['data_plantao', 'turno', 'horas']
-    template_name_suffix = '_update_form'
+    template_name = 'Plantao/plantao_update_form.html'
 
     def form_valid(self, form):
         if ((form.cleaned_data['turno'] == '1' or form.cleaned_data['turno'] == '2') and form.cleaned_data['horas'] > 6) or (form.cleaned_data['turno'] == '3' and form.cleaned_data['horas'] > 12):
@@ -84,6 +84,7 @@ class EditarPlantao(LoginRequiredMixin, generic.UpdateView):
 
 class DeletarPlantao(LoginRequiredMixin, generic.DeleteView):
     model = Plantao
+    template_name = 'Plantao/confirm_delete.html'
     success_url = reverse_lazy('plantao:listar')
 
 @login_required

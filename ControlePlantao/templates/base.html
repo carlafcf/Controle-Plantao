@@ -75,7 +75,17 @@
                     <a class="nav-link" href="{% url 'usuario:status' %}">Mudar status</a>
                   </div>
                 </li>
-
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Coordenação
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="{% url 'plantao:criar_admin' %}">Adicionar plantão</a>
+                    <a class="dropdown-item" href="{% url 'plantao:listar' list_all=1 %}">Ver plantões</a>
+                    <a class="dropdown-item" href="{% url 'plantao:calendario' month=0 year=0 dia_selecionado=0 %}">Calendário</a>
+                    <a class="dropdown-item" href="{% url 'plantao:resumo' month=0 year=0 %}">Resumo do mês</a>
+                  </div>
+                </li>
               {% endif %}
             {% endif %}
           </ul>
