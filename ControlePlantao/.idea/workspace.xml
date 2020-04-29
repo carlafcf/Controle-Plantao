@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0872af67-e61e-4ce7-be5e-b001b8592b82" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControlePlantao/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ControlePlantao/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plantao/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/plantao/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plantao/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/plantao/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Plantao/calendario_mes.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Plantao/calendario_mes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Plantao/meses_anteriores.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Plantao/meses_anteriores.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Plantao/plantao_confirm_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Plantao/plantao_confirm_delete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Plantao/plantao_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Plantao/plantao_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Plantao/plantao_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Plantao/plantao_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Plantao/plantao_update_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Plantao/plantao_update_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Plantao/resumo_mes.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Plantao/resumo_mes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Usuario/cadastrar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Usuario/cadastrar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Usuario/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Usuario/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Usuario/status.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Usuario/status.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Usuario/user_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Usuario/user_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Usuario/user_update_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Usuario/user_update_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuario/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/usuario/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +24,7 @@
           <entry key="env" value="1" />
           <entry key="gitignore" value="1" />
           <entry key="html" value="65" />
-          <entry key="py" value="69" />
+          <entry key="py" value="70" />
           <entry key="txt" value="3" />
         </counts>
       </usages-collector>
@@ -50,7 +32,7 @@
         <counts>
           <entry key="HTML" value="65" />
           <entry key="PLAIN_TEXT" value="6" />
-          <entry key="Python" value="69" />
+          <entry key="Python" value="70" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -59,7 +41,7 @@
           <entry key="env" value="4" />
           <entry key="gitignore" value="24" />
           <entry key="html" value="4251" />
-          <entry key="py" value="8208" />
+          <entry key="py" value="8210" />
           <entry key="txt" value="9" />
         </counts>
       </usages-collector>
@@ -67,29 +49,13 @@
         <counts>
           <entry key="HTML" value="4251" />
           <entry key="PLAIN_TEXT" value="65" />
-          <entry key="Python" value="8208" />
+          <entry key="Python" value="8210" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/Plantao/plantao_list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="780">
-              <caret line="52" column="48" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
-              <folding>
-                <element signature="n#style#0;n#i#0;n#a#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#0;n#a#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#0;n#a#0;n#td#3;n#tr#0;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#0;n#a#1;n#td#3;n#tr#0;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#0;n#a#1;n#td#3;n#tr#0;n#table#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/Plantao/plantao_form.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -157,11 +123,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/Usuario/user_update_form.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
               <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ControlePlantao/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="292">
+              <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+              <folding>
+                <element signature="e#316#325#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -230,7 +208,6 @@
         <option value="$PROJECT_DIR$/usuario/urls.py" />
         <option value="$PROJECT_DIR$/usuario/models.py" />
         <option value="$PROJECT_DIR$/usuario/views.py" />
-        <option value="$PROJECT_DIR$/ControlePlantao/settings.py" />
         <option value="$PROJECT_DIR$/templates/Plantao/plantao_confirm_delete.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/templates/Plantao/meses_anteriores.html" />
@@ -246,6 +223,7 @@
         <option value="$PROJECT_DIR$/templates/Usuario/status.html" />
         <option value="$PROJECT_DIR$/templates/Usuario/user_list.html" />
         <option value="$PROJECT_DIR$/templates/Usuario/user_update_form.html" />
+        <option value="$PROJECT_DIR$/ControlePlantao/settings.py" />
       </list>
     </option>
   </component>
@@ -506,16 +484,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ControlePlantao/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="138" column="34" selection-start-line="138" selection-start-column="34" selection-end-line="138" selection-end-column="34" />
-          <folding>
-            <element signature="e#316#325#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="82">
@@ -657,6 +625,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ControlePlantao/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+          <folding>
+            <element signature="e#316#325#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
