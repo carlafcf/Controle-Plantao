@@ -29,8 +29,8 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['ps-escala.herokuapp.com']
-#ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = ['ps-escala.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -136,5 +136,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIR = STATIC_DIR
 
 LOGIN_URL = 'usuario:login'
-LOGIN_REDIRECT_URL = 'plantao:listar'
+LOGIN_REDIRECT_URL = 'plantao:home'
 LOGOUT_REDIRECT_URL = 'usuario:login'
+
+# Global variables
+
+HORAS_PLANTAO_DIARIO = 72

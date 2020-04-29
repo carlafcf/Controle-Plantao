@@ -51,20 +51,27 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   {% if user.is_superuser %}
-                    <a class="dropdown-item" href="{% url 'plantao:criar_admin' %}">Novo</a>
+                    <a class="dropdown-item" href="{% url 'plantao:criar_admin' %}">Cadastrar</a>
                   {% else %}
-                    <a class="dropdown-item" href="{% url 'plantao:criar' %}">Novo</a>
+                    <a class="dropdown-item" href="{% url 'plantao:criar' %}">Cadastrar</a>
                   {% endif %}
                   <a class="dropdown-item" href="{% url 'plantao:listar' list_all=0 %}">Plantões de {{user.first_name}}</a>
-                  {% if user.is_superuser %}
-                    <a class="dropdown-item" href="{% url 'plantao:listar' list_all=1 %}">Ver todos</a>
-                    <a class="dropdown-item" href="{% url 'plantao:calendario' month=0 year=0 dia_selecionado=0 %}">Calendário</a>
-                    <a class="dropdown-item" href="{% url 'plantao:resumo' month=0 year=0 %}">Resumo do mês</a>
-                  {% endif %}
-                    <a class="dropdown-item" href="{% url 'plantao:meses_anteriores' %}">Meses anteriores</a>
+                  <a class="dropdown-item" href="{% url 'plantao:meses_anteriores' %}">Outros meses</a>
                 </div>
               </li>
               {% if user.is_superuser %}
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Coordenação
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="{% url 'plantao:listar' list_all=1 %}">Plantões do mês</a>
+                    <a class="dropdown-item" href="{% url 'plantao:calendario' month=0 year=0 dia_selecionado=0 %}">Calendário</a>
+                    <a class="dropdown-item" href="{% url 'plantao:resumo_mes' %}">Resumo do mês</a>
+                    <a class="dropdown-item" href="{% url 'plantao:meses_anteriores_admin' %}">Meses anteriores</a>
+                  </div>
+                </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Plantonistas
@@ -73,17 +80,6 @@
                     <a class="nav-link" href="{% url 'usuario:cadastrar' %}">Cadastrar</a>
                     <a class="nav-link" href="{% url 'usuario:listar' %}">Listar</a>
                     <a class="nav-link" href="{% url 'usuario:status' %}">Mudar status</a>
-                  </div>
-                </li>
-              <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Coordenação
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="{% url 'plantao:criar_admin' %}">Adicionar plantão</a>
-                    <a class="dropdown-item" href="{% url 'plantao:listar' list_all=1 %}">Ver plantões</a>
-                    <a class="dropdown-item" href="{% url 'plantao:calendario' month=0 year=0 dia_selecionado=0 %}">Calendário</a>
-                    <a class="dropdown-item" href="{% url 'plantao:resumo' month=0 year=0 %}">Resumo do mês</a>
                   </div>
                 </li>
               {% endif %}

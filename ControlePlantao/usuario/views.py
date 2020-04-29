@@ -20,7 +20,7 @@ class ListUsers(ListView):
 class UserStatus(ListView):
     model = User
     template_name = 'Usuario/status.html'
-    ordering = ['-is_active']
+    ordering = ['-is_active', 'first_name', 'last_name']
 
 class EditarUser(UpdateView):
     model = User

@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    <h1>Plantonistas</h1>
+    <h2>Plantonistas</h2>
 
     {% if user_list %}
         <table class="table">
@@ -20,8 +20,15 @@
             <td>{{ usuario.username }}</td>
             <td>{{ usuario.email }}</td>
             <td>
-                <a href="{% url 'usuario:editar' pk=usuario.pk %}" class="btn btn-warning-outline"><i class="fa fa-pencil" aria-hidden="true" style="color:blue"></i></a>
-                <a href="{% url 'usuario:status' %}" class="btn btn-danger-outline"><i class="fa fa-user-times" aria-hidden="true" style="color:red"></i></a>
+                <a href="{% url 'usuario:editar' pk=usuario.pk %}" class="btn btn-warning-outline" title="Editar">
+                    <i class="fa fa-pencil" aria-hidden="true" style="color:blue"></i>
+                </a>
+                <a href="{% url 'plantao:plantoes_usuario' pk=usuario.pk %}" class="btn btn-warning-outline" title="Ver plantões do mês">
+                    <i class="fa fa-search" aria-hidden="true" style="color:green"></i>
+                </a>
+                <a href="{% url 'usuario:status' %}" class="btn btn-danger-outline" title="Remover">
+                    <i class="fa fa-user-times" aria-hidden="true" style="color:red"></i>
+                </a>
             </td>
           </tr>
           {% endfor %}

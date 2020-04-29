@@ -1,7 +1,27 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Calendário de {{resumo.0.data|date:"F"}}</h1>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+            <h2>Calendário de {{resumo.0.data|date:"F"}}</h2>
+        </div>
+        <div class="text-right col-2">
+            <a href="{% url 'plantao:criar_admin' %}" class="btn btn-primary-outline" title="Cadastrar plantão">
+                <i class="fa fa-plus-circle fa-3x" aria-hidden="true" style="color:green"></i>
+            </a>
+        </div>
+        <div class="text-right col-4">
+            <form action="{% url 'plantao:trocar_horas_mes' %}" method="POST">
+                {% csrf_token %}
+                <h4>Total de horas diária</h4>
+                <input type="number" id="horas" name="horas" min="1" value="{{horas_plantao_diario}}">
+                <button class="submit btn btn-success-outline"><i class="fa fa-check-circle" aria-hidden="true" style="color:green"></i></button>
+            </form>
+        </div>
+      </div>
+    </div>
 
     <div class="container">
       <!--<div class="row">-->
@@ -17,14 +37,16 @@
               {% for dia in resumo %}
 
                 {% if forloop.counter|divisibleby:7 %}
-                    <td class="text-center"><b>
-                        <a href="{% url 'plantao:calendario' month=0 year=0 dia_selecionado=dia.data.day %}">
+                    <td class="text-center" style={{ dia.cor }}><b>
+                        <a href="{% url 'plantao:calendario' month=0 year=0 dia_selecionado=dia.data.day %}"
+                           style={{ dia.cor }}>
                             {{ dia.data.day }}/{{ dia.data.month }}
                         </a></b><br>{{ dia.horas }}</td>
                     </tr><tr>
                 {% else %}
-                    <td class="text-center"><b>
-                        <a href="{% url 'plantao:calendario' month=0 year=0 dia_selecionado=dia.data.day %}">
+                    <td class="text-center" style={{ dia.cor }}><b>
+                        <a href="{% url 'plantao:calendario' month=0 year=0 dia_selecionado=dia.data.day %}"
+                            style={{ dia.cor }}>
                             {{ dia.data.day }}/{{ dia.data.month }}
                         </a></b><br>{{ dia.horas }}</td>
                 {% endif %}
@@ -48,7 +70,7 @@
                     <td>{{ plantao.horas }}</td>
                     <td>{{ plantao.plantonista }}</td>
                     <td>
-                        <a href="{% url 'plantao:editar' pk=plantao.pk %}" class="btn btn-warning-outline">
+                        <a href="{% url 'plantao:editar_admin' pk=plantao.pk %}" class="btn btn-warning-outline">
                             <i class="fa fa-pencil bt1" aria-hidden="true" style="color:blue"></i>
                         </a>
                         <a href="{% url 'plantao:deletar' pk=plantao.pk %}" class="btn btn-danger-outline">
