@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% block title %}
+    Plantonistas
+{% endblock %}
 
-    <h2>Plantonistas</h2>
+{% block content %}
 
     {% if user_list %}
         <table class="table">

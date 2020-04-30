@@ -1,8 +1,11 @@
 {% extends "base.html" %}
 {% load bootstrap4 %}
 
+{% block title %}
+    Cadastrar plantão
+{% endblock %}
+
 {% block content %}
-  <h2>Cadastre um plantão</h2>
 {% if messages %}
     <ul class="messages">
     {% for message in messages %}
@@ -14,13 +17,15 @@
     <form id="plantaoForm" action="{% url 'plantao:criar_admin' %}" method="post">
     {% csrf_token %}
     {% bootstrap_form form %}
-    <input type="submit" class="btn btn-primary btn-large" value="Cadastrar Plantão">
+    <input type="hidden" name="next" value="{{ request.path }}">
+    <input type="submit" class="btn btn-success btn-large" value="Cadastrar Plantão">
   </form>
 {% else %}
     <form id="plantaoForm" action="{% url 'plantao:criar' %}" method="post">
     {% csrf_token %}
     {% bootstrap_form form %}
-    <input type="submit" class="btn btn-primary btn-large" value="Cadastrar Plantão">
+    <input type="hidden" name="next" value="{{ request.path }}">
+    <input type="submit" class="btn btn-success btn-large" value="Cadastrar Plantão">
   </form>
 {% endif %}
 

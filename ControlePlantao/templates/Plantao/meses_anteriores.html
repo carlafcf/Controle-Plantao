@@ -1,8 +1,30 @@
 {% extends "base.html" %}
 
+{% block title %}
+    Plantões de {{mes|date:"F"}}
+{% endblock %}
+
+{% block right %}
+    {% if admin %}
+        <form action="{% url 'plantao:meses_anteriores_admin' %}" method="POST">
+            {% csrf_token %}
+            <input type="month" id="mes" name="mes" min="2020-01" value="{% now 'Y-m' %}">
+            <button class="submit btn btn-success-outline"><i class="fa fa-check-circle" aria-hidden="true" style="color:green"></i></button>
+        </form>
+    {% else %}
+        <form action="{% url 'plantao:meses_anteriores' %}" method="POST">
+            {% csrf_token %}
+            <input type="month" id="mes" name="mes" min="2020-01" value="{% now 'Y-m' %}">
+            <button class="submit btn btn-success-outline"><i class="fa fa-check-circle fa-2x" aria-hidden="true" style="color:green"></i></button>
+        </form>
+    {% endif %}
+{% endblock %}
+
 {% block content %}
 
-        <div class="container">
+
+
+        <!--<div class="container">
           <div class="row">
             <div class="col-8">
                 <h2>Plantões de {{mes|date:"F"}}</h2>
@@ -25,9 +47,9 @@
                 {% endif %}
             </div>
           </div>
-        </div>
+        </div>-->
         {% if plantao_list%}
-            <h5>Total de Horas: {{total_horas}} horas</h5>
+            <h6>Total de Horas: {{total_horas}} horas</h6>
             <table class="table">
               <thead>
                 <th scope="col">#</th>

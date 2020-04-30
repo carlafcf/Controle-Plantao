@@ -1,11 +1,14 @@
 {% extends "base.html" %}
 {% load bootstrap4 %}
 
+{% block title %}
+    Editar plantonista
+{% endblock %}
+
 {% block content %}
-  <h2>Editar usuário</h2>
     <form method="POST" action="{% url 'usuario:editar' pk=user.pk %}" class="" >
         {% csrf_token %}
         {% bootstrap_form form %}
-        <button type="submit" class="btn btn-primary">Atualizar</button>
+        <button type="submit" class="btn btn-success">Atualizar</button>
     </form>
 {% endblock %}

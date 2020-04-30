@@ -1,24 +1,20 @@
 {% extends "base.html" %}
 
+{% block title %}
+    Resumo de {{mes|date:"F"}}
+{% endblock %}
+
+{% block right %}
+    <form action="{% url 'plantao:resumo_mes' %}" method="POST">
+        {% csrf_token %}
+        <input type="month" id="mes" name="mes" min="2020-01" value="{% now 'Y-m' %}">
+        <button class="submit btn btn-success-outline"><i class="fa fa-check-circle" aria-hidden="true" style="color:green"></i></button>
+    </form>
+{% endblock %}
+
 {% block content %}
 
-    <div class="container">
-      <div class="row">
-        <div class="col-8">
-            <h2>Resumo de {{mes|date:"F"}}</h2>
-        </div>
-        <div class="text-right col-4">
-            <form action="{% url 'plantao:resumo_mes' %}" method="POST">
-                {% csrf_token %}
-                <h4>Escolha um mês:</h4>
-                <input type="month" id="mes" name="mes" min="2020-01" value="{% now 'Y-m' %}">
-                <button class="submit btn btn-success-outline"><i class="fa fa-check-circle" aria-hidden="true" style="color:green"></i></button>
-            </form>
-        </div>
-      </div>
-    </div>
-
-    <h5>Total de Horas: {{total_horas}} horas</h5>
+    <h6>Total de Horas: {{total_horas}} horas</h6>
     <table class="table">
       <thead>
         <th scope="col">#</th>

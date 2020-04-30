@@ -6,7 +6,6 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Sum
 from datetime import date, datetime
-import calendar
 from django.contrib import messages
 from calendar import monthrange
 
@@ -15,7 +14,7 @@ from usuario.models import User
 
 def home(request):
     if request.user.is_superuser:
-        return redirect('plantao:calendario', month=0, year=0, dia_selecionado=0)
+        return redirect('plantao:calendario',dia=0)
     else:
         return redirect('plantao:listar')
 
@@ -206,18 +205,14 @@ def resumo_mes(request):
     context = {'lista_final': lista_final, 'total_horas': horas, 'mes': date(int(this_year), int(this_month), 1)}
     return render(request, 'Plantao/resumo_mes.html', context)
 
-def calendario_mes(request, year, month, dia_selecionado):
-    if year == 0 and month == 0:
-        ano = date.today().year
-        mes = date.today().month
-    else:
-        ano = year
-        mes = month
+def calendario_mes(request, dia):
+    ano = date.today().year
+    mes = date.today().month
     qnt_dias = monthrange(ano, mes)[1]
     resumo = []
     total_horas = 0
-    for dia in range(1,qnt_dias+1):
-        data = datetime.strptime(str(ano)+str(mes)+str(dia), '%Y%m%d').date()
+    for day in range(1,qnt_dias+1):
+        data = datetime.strptime(str(ano)+str(mes)+str(day), '%Y%m%d').date()
         horas_dia = list(Plantao.objects.filter(data_plantao = data).
                          aggregate(Sum('horas')).values())[0]
         total_horas += int(0 if horas_dia is None else horas_dia)
@@ -228,10 +223,10 @@ def calendario_mes(request, year, month, dia_selecionado):
         else:
             cor = "color:gray"
         resumo.append({'data': data, 'horas': int(0 if horas_dia is None else horas_dia), 'cor': cor})
-    if dia_selecionado == 0:
+    if dia == 0:
         plantao_list = []
     else:
-        plantao_list = Plantao.objects.filter(data_plantao__day=dia_selecionado, data_plantao__month=mes,
+        plantao_list = Plantao.objects.filter(data_plantao__day=dia, data_plantao__month=mes,
                                               data_plantao__year=ano)
     context = {'resumo': resumo, 'total_horas': total_horas, 'plantao_list': plantao_list,
                'horas_plantao_diario': settings.HORAS_PLANTAO_DIARIO}
@@ -241,4 +236,4 @@ def trocar_horas_mes(request):
     if request.method == "POST":
         horas = int(request.POST.get('horas'))
         settings.HORAS_PLANTAO_DIARIO = horas
-    return redirect('plantao:calendario', month=0, year=0, dia_selecionado=0)
+    return redirect('plantao:calendario', dia=0)

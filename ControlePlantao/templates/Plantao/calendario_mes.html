@@ -1,8 +1,18 @@
 {% extends "base.html" %}
 
+{% block title %}
+    Calendário de {{resumo.0.data|date:"F"}}
+{% endblock %}
+
+{% block right %}
+    <a href="{% url 'plantao:criar_admin' %}" class="btn btn-primary-outline" title="Cadastrar plantão">
+        <i class="fa fa-plus-circle fa-3x" aria-hidden="true" style="color:green"></i>
+    </a>
+{% endblock %}
+
 {% block content %}
 
-    <div class="container">
+    <!--<div class="container">
       <div class="row">
         <div class="col-6">
             <h2>Calendário de {{resumo.0.data|date:"F"}}</h2>
@@ -21,12 +31,19 @@
             </form>
         </div>
       </div>
-    </div>
+    </div>-->
 
-    <div class="container">
+    <!--<div class="container">-->
       <!--<div class="row">-->
         <div>
-            <h5>Total de Horas: {{total_horas}} horas</h5>
+            <form action="{% url 'plantao:trocar_horas_mes' %}" method="POST">
+                {% csrf_token %}
+                <label for="horas"><b>Total de horas por dia</b></label>
+                <input type="number" id="horas" name="horas" min="1" value="{{horas_plantao_diario}}">
+                <button class="submit btn btn-success-outline"><i class="fa fa-check-circle" aria-hidden="true" style="color:green"></i></button>
+            </form>
+            <br>
+            <h6>Total de Horas: {{total_horas}} horas</h6>
 
             <table class="table">
               <thead>
@@ -38,14 +55,14 @@
 
                 {% if forloop.counter|divisibleby:7 %}
                     <td class="text-center" style={{ dia.cor }}><b>
-                        <a href="{% url 'plantao:calendario' month=0 year=0 dia_selecionado=dia.data.day %}"
+                        <a href="{% url 'plantao:calendario' dia=dia.data.day %}"
                            style={{ dia.cor }}>
                             {{ dia.data.day }}/{{ dia.data.month }}
                         </a></b><br>{{ dia.horas }}</td>
                     </tr><tr>
                 {% else %}
                     <td class="text-center" style={{ dia.cor }}><b>
-                        <a href="{% url 'plantao:calendario' month=0 year=0 dia_selecionado=dia.data.day %}"
+                        <a href="{% url 'plantao:calendario' dia=dia.data.day %}"
                             style={{ dia.cor }}>
                             {{ dia.data.day }}/{{ dia.data.month }}
                         </a></b><br>{{ dia.horas }}</td>
@@ -83,6 +100,6 @@
               {% endif %}
         </div>
       <!--</div>-->
-    </div>
+    <!--</div>-->
 
 {% endblock %}

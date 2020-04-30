@@ -1,13 +1,16 @@
 {% extends "base.html" %}
 {% load bootstrap4 %}
 
+{% block title %}
+    Cadastrar plantonista
+{% endblock %}
+
 {% block content %}
-  <div class="container">
-    <h2>Cadastrar</h2>
+
     <form method="post">
       {% csrf_token %}
       {% bootstrap_form form %}
-      <button type="submit" class="btn btn-primary">Cadastrar</button>
+      <button type="submit" class="btn btn-success">Cadastrar</button>
     </form>
-  </div>
+
 {% endblock %}
