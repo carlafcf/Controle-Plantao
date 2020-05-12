@@ -141,7 +141,7 @@ def listar(request, list_all=1):
                                           plantonista=request.user)
         total_horas = list(Plantao.objects.filter(data_plantao__month=this_month, data_plantao__year=this_year,
                                                   plantonista=request.user).aggregate(Sum('horas')).values())[0]
-    context = {'plantao_list': plantoes, 'total_horas': total_horas}
+    context = {'plantao_list': plantoes, 'total_horas': total_horas, 'mes': date(int(this_year), int(this_month), 1)}
     return render(request, 'Plantao/plantao_list.html', context)
 
 @login_required

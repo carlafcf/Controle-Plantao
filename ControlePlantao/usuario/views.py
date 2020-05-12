@@ -7,7 +7,7 @@ from .models import User
 
 class SignUp(CreateView):
     form_class = forms.UserCreateForm
-    success_url = reverse_lazy('plantao:listar')
+    success_url = reverse_lazy('usuario:listar')
     template_name = 'Usuario/cadastrar.html'
 
 class ListUsers(ListView):
@@ -31,7 +31,7 @@ class EditarUser(UpdateView):
         return user
 
     def get_success_url(self, *args, **kwargs):
-        return reverse_lazy('plantao:listar')
+        return reverse_lazy('usuario:listar')
 
 #class EditarUsuario(UpdateView):
 #    model = User
