@@ -57,14 +57,14 @@
                     <td class="text-center" style={{ dia.cor }}><b>
                         <a href="{% url 'plantao:calendario' dia=dia.data.day %}"
                            style={{ dia.cor }}>
-                            {{ dia.data.day }}/{{ dia.data.month }}
+                            {{ dia.data.day }}/{{ dia.data.month }}<br>{{ dia.data|date:"D" }}
                         </a></b><br>{{ dia.horas }}</td>
                     </tr><tr>
                 {% else %}
                     <td class="text-center" style={{ dia.cor }}><b>
                         <a href="{% url 'plantao:calendario' dia=dia.data.day %}"
                             style={{ dia.cor }}>
-                            {{ dia.data.day }}/{{ dia.data.month }}
+                            {{ dia.data.day }}/{{ dia.data.month }}<br>{{ dia.data|date:"D" }}
                         </a></b><br>{{ dia.horas }}</td>
                 {% endif %}
 
@@ -73,7 +73,7 @@
         </div>
           <div>
               {% if plantao_list %}
-                <h5>Data: {{ plantao_list.0.data_plantao }}</h5>
+                <h5>Data: {{ plantao_list.0.data_plantao }} ({{ plantao_list.0.data_plantao|date:"l" }})</h5>
                 <table class="table">
                   <thead>
                     <th scope="col">Turno</th>
